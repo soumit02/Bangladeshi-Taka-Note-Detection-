@@ -32,8 +32,8 @@ Before running this project, ensure you have the following installed on your mac
 **Step 1: Clone the Repository**
 Open your terminal and clone the repository from GitHub:
 ```bash
-git clone https://github.com/soumit02/FastAPI_Docker_MiniProject.git
-cd FastAPI_Docker_MiniProject
+git clone https://github.com/soumit02/Bangladeshi-Taka-Note-Detection-.git
+cd Bangladeshi-Taka-Note-Detection
 ```
 
 **Step 2: Start the Containers**
