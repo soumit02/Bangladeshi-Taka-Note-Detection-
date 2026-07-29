@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # First Application Server
+  app1:
+    build: .
+    container_name: yolo_app_1
+    volumes:
+      - ./:/app
+    environment:
+      - SERVER_NAME=App-Server-1
+    restart: unless-stopped
+    depends_on:
+      - redis
+
+  # Second Application Server
+  app2:
+    build: .
+    container_name: yolo_app_2
+    volumes:
+      - ./:/app
+    environment:
+      - SERVER_NAME=App-Server-2
+    restart: unless-stopped
+    depends_on:
+      - redis
+
+  # Redis Cache Server
+  redis:
+    image: redis:alpine
+    container_name: yolo_redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # Nginx Load Balancer Server
+  nginx:
+    image: nginx:latest
+    container_name: yolo_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app1
+      - app2

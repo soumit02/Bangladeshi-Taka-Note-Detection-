@@ -1,0 +1,27 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.env
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Docker related files (No need to copy them inside the container)
+Dockerfile
+docker-compose.yml
+.dockerignore
+nginx.conf
+
+# Project specific temporary and sample files
+sample_images/
+test_images/
+test.jpg
+temp_*
