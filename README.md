@@ -27,13 +27,12 @@ Before running this project, ensure you have the following installed on your mac
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [Git](https://git-scm.com/downloads)
 
-## How to Run the Project Locally
 
 **Step 1: Clone the Repository**
 Open your terminal and clone the repository from GitHub:
 ```bash
 git clone https://github.com/soumit02/Bangladeshi-Taka-Note-Detection-.git
-cd Bangladeshi-Taka-Note-Detection
+cd Bangladeshi-Taka-Note-Detection-
 ```
 
 **Step 2: Start the Containers**
@@ -46,33 +45,34 @@ docker-compose up -d --build
 Once the containers are running, open your browser and navigate to the Swagger UI:
 👉 **[http://127.0.0.1:8080/docs](http://127.0.0.1:8080/docs)**
 
-##  How to Use the API Endpoint
+---
 
-Once the containers are running, the API is accessible via the Nginx load balancer at `http://localhost:8080`. You can interact with the `/predict` endpoint using Swagger UI (Browser), Postman, or cURL.
+## 🌐 Live Cloud Deployment (Try it now!)
 
-### Method 1: Using Swagger UI (Browser - Easiest)
-1. Open your web browser and navigate to: `http://localhost:8080/docs`
+The API is publicly deployed and accessible 24/7 via Render. You do not need to install Docker or run any code to test it.
+
+👉 **Live Swagger UI:** [https://bangladeshi-taka-note-detection-mchz.onrender.com/docs](https://bangladeshi-taka-note-detection-mchz.onrender.com/docs)
+
+### Testing the Live API
+You can interact with the live `/predict` endpoint using the following methods:
+
+**Method 1: Using Swagger UI (Browser)**
+1. Open the Live Swagger UI link above.
 2. Click on the green `POST /predict` endpoint to expand it.
-3. Click the **"Try it out"** button on the right side.
-4. In the `file` field, click **"Choose File"** and select a Bangladeshi Taka image from your computer.
-5. Click the large blue **"Execute"** button.
-6. Scroll down to the "Responses" section to see the JSON output.
+3. Click the **"Try it out"** button.
+4. In the `file` field, click **"Choose File"** and upload a Taka note image.
+5. Click **"Execute"** and check the JSON response below.
 
-### Method 2: Using Postman (GUI)
-1. Open the Postman application and create a new request.
-2. Change the HTTP method to **`POST`**.
-3. Enter the endpoint URL: `http://localhost:8080/predict`
-4. Go to the **Body** tab below the URL bar.
-5. Select the **form-data** option.
-6. In the **Key** column, type `file`. Hover over the right edge of this cell and change the type from `Text` to **`File`**.
-7. In the **Value** column, click "Select Files" and choose an image.
-8. Click the blue **Send** button.
+**Method 2: Using Postman**
+1. Open Postman and create a new **`POST`** request.
+2. Enter the Live URL: `https://bangladeshi-taka-note-detection-mchz.onrender.com/predict`
+3. Under the **Body** tab, select **form-data**.
+4. Set the Key as `file` (change type to **File**) and upload your image.
+5. Click **Send**.
 
-### Method 3: Using cURL (Command Line)
-If you prefer using the terminal, you can send an image directly using the `curl` command. Open your terminal and run the following command (make sure to replace `path/to/your/image.jpg` with the actual image path):
-
+**Method 3: Using cURL**
 ```bash
-curl -X POST "http://localhost:8080/predict" \
+curl -X POST "[https://bangladeshi-taka-note-detection-mchz.onrender.com/predict](https://bangladeshi-taka-note-detection-mchz.onrender.com/predict)" \
   -H "accept: application/json" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@path/to/your/image.jpg"
