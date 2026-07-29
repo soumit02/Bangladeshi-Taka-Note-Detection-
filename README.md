@@ -45,3 +45,34 @@ docker-compose up -d --build
 **Step 3: Access the API**
 Once the containers are running, open your browser and navigate to the Swagger UI:
 👉 **[http://127.0.0.1:8080/docs](http://127.0.0.1:8080/docs)**
+
+##  How to Use the API Endpoint
+
+Once the containers are running, the API is accessible via the Nginx load balancer at `http://localhost:8080`. You can interact with the `/predict` endpoint using Swagger UI (Browser), Postman, or cURL.
+
+### Method 1: Using Swagger UI (Browser - Easiest)
+1. Open your web browser and navigate to: `http://localhost:8080/docs`
+2. Click on the green `POST /predict` endpoint to expand it.
+3. Click the **"Try it out"** button on the right side.
+4. In the `file` field, click **"Choose File"** and select a Bangladeshi Taka image from your computer.
+5. Click the large blue **"Execute"** button.
+6. Scroll down to the "Responses" section to see the JSON output.
+
+### Method 2: Using Postman (GUI)
+1. Open the Postman application and create a new request.
+2. Change the HTTP method to **`POST`**.
+3. Enter the endpoint URL: `http://localhost:8080/predict`
+4. Go to the **Body** tab below the URL bar.
+5. Select the **form-data** option.
+6. In the **Key** column, type `file`. Hover over the right edge of this cell and change the type from `Text` to **`File`**.
+7. In the **Value** column, click "Select Files" and choose an image.
+8. Click the blue **Send** button.
+
+### Method 3: Using cURL (Command Line)
+If you prefer using the terminal, you can send an image directly using the `curl` command. Open your terminal and run the following command (make sure to replace `path/to/your/image.jpg` with the actual image path):
+
+```bash
+curl -X POST "http://localhost:8080/predict" \
+  -H "accept: application/json" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@path/to/your/image.jpg"
