@@ -71,11 +71,11 @@ async def serve_frontend():
                 <img id="preview" alt="Image Preview">
             </label>
             
-            <button class="btn-predict" id="predictBtn" onclick="uploadAndPredict()">Detect Note</button>
+            <button class="btn-predict" id="predictBtn" onclick="uploadAndPredict()">Predict Note</button>
             <div id="loader">Processing... Please wait ⏳</div>
 
             <div id="result-card">
-                <div class="result-item">Detected Note: <span id="res-class" style="color: #006a4e; font-size: 18px;">-</span></div>
+                <div class="result-item">Predicted Note: <span id="res-class" style="color: #006a4e; font-size: 18px;">-</span></div>
                 <div class="result-item">Confidence Score: <span id="res-conf">-</span></div>
                 <div class="result-item">Source: <span id="res-source">-</span></div>
                 <div class="result-item">Processed By: <span id="res-server">-</span></div>
