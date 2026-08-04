@@ -1,4 +1,4 @@
-# Bangladeshi Taka Note Detection System
+# Bangladeshi Taka Note Prediction System
 
 An end-to-end, highly scalable Machine Learning Web Application and REST API designed to detect and classify Bangladeshi Banknotes. This project leverages an advanced Computer Vision model served through a robust, containerized backend infrastructure with an interactive and user-friendly frontend.
 
