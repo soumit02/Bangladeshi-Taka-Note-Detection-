@@ -9,7 +9,7 @@ An end-to-end, highly scalable Machine Learning Web Application and REST API des
 ## 📸 Live Interactive UI
 Users can easily upload banknote images and instantly get predictions along with confidence scores directly from the web interface. 
 
-![Live Demo UI](sample_images/UI_10.png)
+![Live Demo UI](sample_images\UI_10.png)
 
 ---
 
