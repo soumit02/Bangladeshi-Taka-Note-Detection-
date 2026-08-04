@@ -58,7 +58,7 @@ async def serve_frontend():
     </head>
     <body>
         <div class="navbar">
-            <h2>Bangladeshi Bank Note Detection </h2>
+            <h2>Bangladeshi Bank Note Prediction </h2>
         </div>
 
         <div class="container">
